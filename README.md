@@ -1,4 +1,4 @@
-# Installation
+# [ react-eslint-prettier.sh ] Installation
 
 1. Navigate to your app directory where you want to include this style configuration.
 
