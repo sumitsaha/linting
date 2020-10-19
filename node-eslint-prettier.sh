@@ -12,7 +12,7 @@ NC='\033[0m' # No Color
 # ----------------------
 # Other Variables
 # ----------------------
-base_cmd='npx install-peerdeps --dev eslint-config-airbnb@18.1.0' ## include the @18.1.0 until create-react-app uses eslint version 6.8.0
+base_cmd='npx install-peerdeps --dev eslint-config-airbnb-base'
 
 # --------------------------------------
 # Prompts for configuration preferences
@@ -87,22 +87,17 @@ echo
 echo -e "${GREEN}Configuring your development environment... ${NC}"
 
 echo
-echo -e "1/4 ${LCYAN}ESLint & Prettier Installation... ${NC}"
+echo -e "1/3 ${LCYAN}ESLint & Prettier Installation... ${NC}"
 echo
-$pkg_cmd -D prettier # as create-react-app already comes with eslint, we don't need to install eslint
+$pkg_cmd -D eslint prettier
 
 echo
-echo -e "2/4 ${LCYAN}Conforming to Airbnb's JavaScript Style Guide... ${NC}"
+echo -e "2/3 ${LCYAN}Conforming to Airbnb's JavaScript Style Guide... ${NC}"
 echo
 $base_cmd
 
 echo
-echo -e "3/4 ${YELLOW}Installing Babel ESLint... ${NC}"
-echo
-$pkg_cmd -D babel-eslint
-
-echo
-echo -e "4/4 ${LCYAN}Making ESlint and Prettier play nice with each other... ${NC}"
+echo -e "3/3 ${LCYAN}Making ESlint and Prettier play nice with each other... ${NC}"
 echo "See https://github.com/prettier/eslint-config-prettier for more details."
 echo
 $pkg_cmd -D eslint-config-prettier eslint-plugin-prettier
@@ -112,28 +107,21 @@ if [ "$skip_eslint_setup" == "true" ]; then
   break
 else
   echo
-  echo -e "4/4 ${YELLOW}Building your .eslintrc${config_extension} file...${NC}"
+  echo -e "3/3 ${YELLOW}Building your .eslintrc${config_extension} file...${NC}"
   > ".eslintrc${config_extension}" # truncates existing file (or creates empty)
 
   echo ${config_opening}'
   "extends": [
-    "react-app",
-    "airbnb",
-    "airbnb/hooks",
-    "eslint:recommended",
     "prettier",
-    "prettier/react",
-    "plugin:jsx-a11y/recommended"
+    "airbnb-base"
   ],
-  "parser": "babel-eslint",
   "parserOptions": {
-    "ecmaVersion": 8
+    "ecmaVersion": 12
   },
   "env": {
-    "browser": true,
-    "node": true,
-    "es6": true,
-    "jest": true
+    "commonjs": true,
+    "es2021": true,
+    "node": true
   },
   "rules": {
     "react-hooks/rules-of-hooks": "error",
@@ -162,9 +150,7 @@ else
     ]
   },
   "plugins": [
-    "prettier",
-    "react",
-    "react-hooks"
+    "prettier"
   ]
 }' >> .eslintrc${config_extension}
 fi
