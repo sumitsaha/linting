@@ -124,20 +124,7 @@ else
     "node": true
   },
   "rules": {
-    "react-hooks/rules-of-hooks": "error",
     "no-console": 0,
-    "react/state-in-constructor": 0,
-    "react/prop-types": 0,
-    "jsx-a11y/click-events-have-key-events": 0,
-    "react/jsx-filename-extension": [
-      1,
-      {
-        "extensions": [
-          ".js",
-          ".jsx"
-        ]
-      }
-    ],
     "prettier/prettier": [
       "error",
       {

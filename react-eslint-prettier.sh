@@ -12,7 +12,7 @@ NC='\033[0m' # No Color
 # ----------------------
 # Other Variables
 # ----------------------
-base_cmd='npx install-peerdeps --dev eslint-config-airbnb@18.1.0' ## include the @18.1.0 until create-react-app uses eslint version 6.8.0
+base_cmd='npx install-peerdeps --dev eslint-config-airbnb'
 
 # --------------------------------------
 # Prompts for configuration preferences
