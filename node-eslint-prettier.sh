@@ -15,6 +15,7 @@ NC='\033[0m' # No Color
 base_cmd='npx install-peerdeps --dev eslint-config-airbnb-base'
 max_len_val='100'
 trailing_comma_pref='es5'
+config_opening='{'
 config_extension='.json'
 
 # --------------------------------------
