@@ -1,3 +1,4 @@
+# Written by Sumit Saha, Learn with Sumit
 #!/bin/bash
 
 # ----------------------
