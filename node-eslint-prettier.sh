@@ -82,8 +82,8 @@ else
 
   echo ${config_opening}'
   "extends": [
-    "prettier",
-    "airbnb-base"
+    "airbnb-base",
+    "prettier"
   ],
   "parserOptions": {
     "ecmaVersion": 12
