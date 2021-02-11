@@ -140,6 +140,8 @@ else
     "react-hooks/rules-of-hooks": "error",
     "no-console": 0,
     "react/state-in-constructor": 0,
+    "indent": 0,
+    "linebreak-style": 0,
     "react/prop-types": 0,
     "jsx-a11y/click-events-have-key-events": 0,
     "react/jsx-filename-extension": [
