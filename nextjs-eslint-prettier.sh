@@ -21,7 +21,7 @@ base_cmd='npx install-peerdeps --dev eslint-config-airbnb'
 
 # Package Manager Prompt
 echo
-echo "Which package manager are you using?"
+echo "Which package manager are you using? Enter 1 for yarn and 2 for npm"
 select package_command_choices in "Yarn" "npm" "Cancel"; do
   case $package_command_choices in
     Yarn ) pkg_cmd='yarn add'; break;;
@@ -41,7 +41,7 @@ if [ -f ".eslintrc.js" -o -f ".eslintrc.yaml" -o -f ".eslintrc.yml" -o -f ".esli
   echo
   echo -e "${RED}CAUTION:${NC} there is loading priority when more than one config file is present: https://eslint.org/docs/user-guide/configuring#configuration-file-formats"
   echo
-  read -p  "Write .eslintrc${config_extension} (Y/n)? "
+  read -p  "Write .eslintrc${config_extension} (Y/n) Enter y for yes and n for no"
   if [[ $REPLY =~ ^[Nn]$ ]]; then
     echo -e "${YELLOW}>>>>> Skipping ESLint config${NC}"
     skip_eslint_setup="true"
