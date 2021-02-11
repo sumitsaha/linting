@@ -31,16 +31,8 @@ select package_command_choices in "Yarn" "npm" "Cancel"; do
 done
 echo
 
-# File Format Prompt
-echo "Which ESLint and Prettier configuration format do you prefer?"
-select config_extension in ".js" ".json" "Cancel"; do
-  case $config_extension in
-    .js ) config_opening='module.exports = {'; break;;
-    .json ) config_opening='{'; break;;
-    Cancel ) exit;;
-  esac
-done
-echo
+# File Format
+config_opening='{';
 
 # Checks for existing eslintrc files
 if [ -f ".eslintrc.js" -o -f ".eslintrc.yaml" -o -f ".eslintrc.yml" -o -f ".eslintrc.json" -o -f ".eslintrc" ]; then
@@ -55,31 +47,12 @@ if [ -f ".eslintrc.js" -o -f ".eslintrc.yaml" -o -f ".eslintrc.yml" -o -f ".esli
     skip_eslint_setup="true"
   fi
 fi
-finished=false
 
-# Max Line Length Prompt
-while ! $finished; do
-  read -p "What max line length do you want to set for ESLint and Prettier? (Recommendation: 100)"
-  if [[ $REPLY =~ ^[0-9]{2,3}$ ]]; then
-    max_len_val=$REPLY
-    finished=true
-    echo
-  else
-    echo -e "${YELLOW}Please choose a max length of two or three digits, e.g. 80 or 100 or 120${NC}"
-  fi
-done
+# Max Line Length
+max_len_val="100"
 
 # Trailing Commas Prompt
-echo "What style of trailing commas do you want to enforce with Prettier?"
-echo -e "${YELLOW}>>>>> See https://prettier.io/docs/en/options.html#trailing-commas for more details.${NC}"
-select trailing_comma_pref in "none" "es5" "all"; do
-  case $trailing_comma_pref in
-    "none" ) break;;
-    "es5" ) break;;
-    "all" ) break;;
-  esac
-done
-echo
+trailing_comma_pref="es5"
 
 # ----------------------
 # Perform Configuration
