@@ -1,12 +1,54 @@
+<!-- PROJECT LOGO -->
+<br />
+<p align="center">
+  <a href="https://github.com/learnwithsumit">
+    <img src="images/logo.png" alt="Logo" width="80" height="80">
+  </a>
+
+<div align="center">
+
+[![Youtube][youtube-shield]][youtube-url]
+[![Facebook][facebook-shield]][facebook-url]
+[![Instagram][instagram-shield]][instagram-url]
+[![LinkedIn][linkedin-shield]][linkedin-url]
+
+</div>
+
+<h3 align="center">Linting for JS, Next.js, Node.js, React.js</h3>
+
+<!-- TABLE OF CONTENTS -->
+
+## Table of Contents
+
+- [Initial Setup](#initial-setup)
+- [Linting Setup](#linting-setup)
+  - [Install Dev Dependencies](#install-dev-dependencies)
+  - [Setup Linting Configuration file manually](#setup-linting-configuration-file-manually)
+  - [Linting Shortcut Setup with bash script](#linting-shortcut-setup-with-bash-script)
+- [VS Code Editor Setup](#vs-code-editor-setup)
+  - [Extensions](#extensions)
+  - [Settings](#settings)
+- [Contact](#contact)
+
+
+<!-- Initial Setup -->
+
+## Initial Setup
+
+Please follow the below instructions to do initial setup:
+
+1. Make sure you have the latest node.js installed in your machine.
+
+2. install yarn
+   ```sh
+   npm i -g yarn
+   ```
+
+<!-- LINTING SETUP -->
+
 ## Linting Setup
 
 In order to lint and format your Next.js project automatically according to popular airbnb style guide, I recommend you to follow the instructions below.
-
-### Install Dependency
-
-```sh
-npm i -g yarn
-```
 
 ### Install Dev Dependencies
 
@@ -20,6 +62,41 @@ yarn add -D eslint-config-prettier eslint-plugin-prettier
 ### Setup Linting Configuration file manually (Next.js)
 
 Create a `.eslintrc.json` file in the project root and enter the below contents:
+
+- JS
+
+```json
+{
+  "extends": [
+    "airbnb-base",
+    "prettier"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 12
+  },
+  "env": {
+    "browser": true
+  },
+  "rules": {
+    "no-console": 0,
+    "indent": 0,
+    "linebreak-style": 0,
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "es5",
+        "singleQuote": true,
+        "printWidth": 100,
+        "tabWidth": 4,
+        "semi": true
+      }
+    ]
+  },
+  "plugins": ["prettier"]
+}
+```
+
+- Next.js
 
 ```json
 {
@@ -54,6 +131,97 @@ Create a `.eslintrc.json` file in the project root and enter the below contents:
       1,
       {
         "extensions": [".js", ".jsx"]
+      }
+    ],
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "es5",
+        "singleQuote": true,
+        "printWidth": 100,
+        "tabWidth": 4,
+        "semi": true
+      }
+    ]
+  },
+  "plugins": ["prettier", "react", "react-hooks"]
+}
+```
+
+- Node.js
+
+```json
+{
+  "extends": [
+    "airbnb-base",
+    "prettier"
+  ],
+  "parserOptions": {
+    "ecmaVersion": 12
+  },
+  "env": {
+    "commonjs": true,
+    "node": true
+  },
+  "rules": {
+    "no-console": 0,
+    "indent": 0,
+    "linebreak-style": 0,
+    "prettier/prettier": [
+      "error",
+      {
+        "trailingComma": "es5",
+        "singleQuote": true,
+        "printWidth": 100,
+        "tabWidth": 4,
+        "semi": true
+      }
+    ]
+  },
+  "plugins": [
+    "prettier"
+  ]
+}
+```
+
+- React.js
+
+```json
+{
+  "extends": [
+    "react-app",
+    "airbnb",
+    "airbnb/hooks",
+    "eslint:recommended",
+    "prettier",
+    "prettier/react",
+    "plugin:jsx-a11y/recommended"
+  ],
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "ecmaVersion": 8
+  },
+  "env": {
+    "browser": true,
+    "node": true,
+    "es6": true,
+    "jest": true
+  },
+  "rules": {
+    "react-hooks/rules-of-hooks": "error",
+    "no-console": 0,
+    "react/state-in-constructor": 0,
+    "indent": 0,
+    "linebreak-style": 0,
+    "react/prop-types": 0,
+    "jsx-a11y/click-events-have-key-events": 0,
+    "react/jsx-filename-extension": [
+      1,
+      {
+        "extensions": [
+          ".js",
+          ".jsx"
+        ]
       }
     ],
     "prettier/prettier": [
@@ -117,10 +285,6 @@ Create a `.eslintrc.json` file in the project root and enter the below contents:
 
 ## VS Code Editor Setup
 
-In order to follow along the tutorial series, I recommend you to use Visual Studio Code Editor and install & apply the below extensions and settings.
-
-### Extensions
-
 Install the below extensions:
 
 - [ESLint](https://marketplace.visualstudio.com/items?itemName=dbaeumer.vscode-eslint)
@@ -144,3 +308,24 @@ Go to your Visual Stuido Code `settings.json` file and add the below settings th
 },
 "eslint.alwaysShowStatus": true
 ```
+
+<!-- CONTACT -->
+
+## Contact
+
+Sumit Saha - [sumit@learnwithsumit.com](mailto:sumit@learnwithsumit.com)
+
+Project Link: [https://github.com/learnwithsumit/nextjs-crash-course-with-heroes](https://github.com/learnwithsumit/nextjs-crash-course-with-heroes)
+
+Youtube Channel: [https://youtube.com/LearnwithSumit](https://youtube.com/LearnwithSumit)
+
+<!-- MARKDOWN LINKS & IMAGES -->
+
+[youtube-shield]: https://img.shields.io/badge/-Youtube-black.svg?style=flat-square&logo=youtube&color=555&logoColor=white
+[youtube-url]: https://youtube.com/LearnwithSumit
+[facebook-shield]: https://img.shields.io/badge/-Facebook-black.svg?style=flat-square&logo=facebook&color=555&logoColor=white
+[facebook-url]: https://facebook.com/letslearnwithsumit
+[instagram-shield]: https://img.shields.io/badge/-Instagram-black.svg?style=flat-square&logo=instagram&color=555&logoColor=white
+[instagram-url]: https://instagram.com/learnwithsumit
+[linkedin-shield]: https://img.shields.io/badge/-LinkedIn-black.svg?style=flat-square&logo=linkedin&colorB=555
+[linkedin-url]: https://linkedin.com/company/learnwithsumit
