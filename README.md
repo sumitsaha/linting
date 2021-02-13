@@ -48,7 +48,7 @@ Please follow the below instructions to do initial setup:
 
 ## Linting Setup
 
-In order to lint and format your Next.js project automatically according to popular airbnb style guide, I recommend you to follow the instructions below.
+In order to lint and format your JS, Next.js, Node.js, React.js project automatically according to popular airbnb style guide, I recommend you to follow the instructions below.
 
 ### Install Dev Dependencies
 
@@ -63,7 +63,7 @@ yarn add -D eslint-config-prettier eslint-plugin-prettier
 
 Create a `.eslintrc.json` file in the project root and enter the below contents:
 
-- JS
+- **For JS Project**
 
 ```json
 {
@@ -96,7 +96,7 @@ Create a `.eslintrc.json` file in the project root and enter the below contents:
 }
 ```
 
-- Next.js
+- **For Next.js Project**
 
 ```json
 {
@@ -148,7 +148,7 @@ Create a `.eslintrc.json` file in the project root and enter the below contents:
 }
 ```
 
-- Node.js
+- **For Node.js Project**
 
 ```json
 {
@@ -184,7 +184,7 @@ Create a `.eslintrc.json` file in the project root and enter the below contents:
 }
 ```
 
-- React.js
+- **For React.js Project**
 
 ```json
 {
@@ -262,19 +262,26 @@ Create a `.eslintrc.json` file in the project root and enter the below contents:
 
 4. Now open your bash terminal and go to any project folder and then enter the below command
 
-- JS
+- **For JS Project**
+
    ```sh
     lint-js
    ```
-- Next.js
+
+- **For Next.js Project**
+
    ```sh
     lint-nextjs
    ```
-- Node.js
+
+- **For Node.js Project**
+
    ```sh
     lint-nodejs
    ```
-- React.js
+
+- **For React.js Project**
+
    ```sh
     lint-reactjs
    ```
