@@ -118,7 +118,6 @@ else
 
   echo ${config_opening}'
   "extends": [
-    "react-app",
     "airbnb",
     "airbnb/hooks",
     "eslint:recommended",
