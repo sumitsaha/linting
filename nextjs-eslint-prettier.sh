@@ -109,6 +109,7 @@ else
     "jest": true
   },
   "rules": {
+    "react/react-in-jsx-scope": 0,
     "react-hooks/rules-of-hooks": "error",
     "no-console": 0,
     "indent": 0,
