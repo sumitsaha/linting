@@ -102,7 +102,8 @@ else
         "singleQuote": true,
         "printWidth": '${max_len_val}',
         "tabWidth": 4,
-        "semi": true
+        "semi": true,
+        "endOfLine": "auto"
       }
     ]
   },
