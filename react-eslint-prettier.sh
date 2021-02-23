@@ -95,7 +95,6 @@ else
     "airbnb/hooks",
     "eslint:recommended",
     "prettier",
-    "prettier/react",
     "plugin:jsx-a11y/recommended"
   ],
   "parser": "babel-eslint",
