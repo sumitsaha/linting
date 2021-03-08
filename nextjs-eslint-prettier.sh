@@ -108,6 +108,12 @@ else
     "jest": true
   },
   "rules": {
+    "react/jsx-props-no-spreading": [
+      false,
+      {
+        "exceptions": ["Component"]
+      }
+    ],
     "react/react-in-jsx-scope": 0,
     "react-hooks/rules-of-hooks": "error",
     "no-console": 0,
